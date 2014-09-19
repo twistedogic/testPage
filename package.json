@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.8.2",
     "express": "^4.9.2",
+    "notp": "^2.0.2",
     "request": "^2.42.0",
-    "speakeasy": "^1.0.3"
+    "speakeasy": "^1.0.3",
+    "thirty-two": "0.0.2"
   }
 }
