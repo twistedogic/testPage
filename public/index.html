@@ -38,16 +38,16 @@ function login() {
                 tenant: $("#tenantName").val(),
                 auth: btoa($("#userName").val() + "@" + $("#tenantName").val() + ":" + $("#password").val())
              },
-             success: handleSuccess,
+             success: window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val(),
              error: handleError });
     return false;
 }
 
 function handleSuccess(e) {
     if (true) {
-        document.location = "./";
+        window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();
     } else {
-        document.location = "./";
+        window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();;
     }
     $("#spinner").hide();
     clearInterval(tid);

@@ -38,11 +38,11 @@ app.post('/login',function(req,res){
                     cookie = cookie.split(';')[0];
                     cookie = cookie.split('"')[1];
                     cookie = cookie.split('=')[1];
-                    cookie = 'vcloud_session_id=' + cookie + '=; domain=abc.com; Secure';
+                    cookie = 'vcloud_session_id=' + cookie + '=; domain=capd.com; Secure; Path=/';
                     res.setHeader("set-cookie", cookie);
                     console.log(cookie);
                     if(check){
-                        res.redirect('https://site.abc.com/cloud/org/'+tenantId);
+                        res.redirect('https://site.capd.com/cloud/org/'+tenantId);
                         console.log('OK!');
                     } else {
                         res.status(404).send('Not found');
