@@ -10,6 +10,13 @@ var secret = t2.decode(key);
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 
+app.post('/',function(req,res){
+    console.log(req.body);
+    var data = req.data;
+    var tenantId = data.tenantName;
+    res.redirect('https://site.capd.com/cloud/org/'+tenantId);
+});
+
 app.post('/login',function(req,res){
     if(req.body){
         var key = 'JV6WOZR4EVIWCRL5KNKHARBXIA';

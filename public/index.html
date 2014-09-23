@@ -38,7 +38,8 @@ function login() {
                 tenant: $("#tenantName").val(),
                 auth: btoa($("#userName").val() + "@" + $("#tenantName").val() + ":" + $("#password").val())
              },
-             success: window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val(),
+             success: handleSuccess,
+            //  success: window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val(),
              error: handleError });
     return false;
 }
@@ -47,10 +48,12 @@ function handleSuccess(e) {
     if (true) {
         window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();
     } else {
-        window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();;
+        window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();
     }
     $("#spinner").hide();
+    window.location.href = "https://site.capd.com/cloud/org/" + $("#tenantName").val();
     clearInterval(tid);
+    
 }
 
 function handleError(e) {
